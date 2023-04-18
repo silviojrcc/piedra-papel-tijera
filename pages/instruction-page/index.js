@@ -1,5 +1,6 @@
 function initInstructionsPage(params) {
     const div = document.createElement("div");
+    const bgImg = "../../img/fondo.png";
     
     div.innerHTML = `
       <section class="instructions__section">
@@ -16,6 +17,51 @@ function initInstructionsPage(params) {
         </div>
       </section>
     `;
+
+    const style = document.createElement("style");
+    style.innerHTML = `
+      .instructions__section {
+        background-image:url(${bgImg});
+        display:flex;
+        width:100%;
+        height:100vh;
+        flex-direction:column;
+        justify-content:space-between;
+        align-items:center;
+        padding-top:100px;
+        padding-left: 20px;
+        padding-right:20px;
+      }
+  
+      .hands-container {
+        display:flex;
+        gap:40px;
+        flex-direction:row;
+        justify-content:space-evenly;
+        overflow:hidden;
+        padding: 0 20px;
+      }
+  
+      .instructions__title {
+          padding:20px;
+          max-width:650px;
+          margin-top:50px;
+      }
+  
+      .instruction {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+      }
+  
+      .instructions__button-container{
+        text-align:center;
+        width:100%;
+        margin-top:50px;
+      }
+    `;
+  
+    div.appendChild(style);
   
     div.querySelector(".instructions__button")?.addEventListener("click", () => {
       params.goTo("/piedra-papel-tijera/game");

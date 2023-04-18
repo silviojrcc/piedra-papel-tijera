@@ -1,5 +1,6 @@
 function initGamePage(params) {
     const div = document.createElement("div");
+    const bgImg = "../../img/fondo.png";
   
     div.innerHTML = `
       <section class="game__section">
@@ -13,6 +14,31 @@ function initGamePage(params) {
           </div>
       </section>
     `;
+
+    const style = document.createElement("style");
+    style.innerHTML = `
+      .game__section{
+        background-image:url(${bgImg});
+        display:flex;
+        width:100%;
+        height:100vh;
+        flex-direction:column;
+        justify-content:space-between;
+        align-items:center;
+        padding-top:100px;
+        padding-left: 20px;
+        padding-right:20px;
+      }
+      
+      .hands-container{
+        display:flex;
+        gap:40px;
+        flex-direction:row;
+        overflow:hidden;
+        padding: 0 20px;
+      }
+    `;
+  
     
     div.appendChild(style);
     return div;

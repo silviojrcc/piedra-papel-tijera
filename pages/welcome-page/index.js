@@ -1,4 +1,4 @@
-function initWelcomePage() {
+function initWelcomePage(params) {
     const div = document.createElement("div");
     const bgImg = "../../img/fondo.png";
     
@@ -61,6 +61,10 @@ function initWelcomePage() {
   `;
 
   div.appendChild(style);
+
+  div.querySelector(".button").addEventListener("click", () => {
+    params.goTo("/piedra-papel-tijera/instructions");
+  });
   
     return div;
   }

@@ -1,6 +1,7 @@
 const routes = [
     { path: /\/piedra-papel-tijera\/welcome/, component: initWelcomePage },
     { path: /\/piedra-papel-tijera\/instructions/, component: initInstructionsPage },
+    { path: /\/piedra-papel-tijera\/game/, component: initGamePage },
   ];
   
   function initRouter(container) {

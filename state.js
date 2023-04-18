@@ -60,4 +60,20 @@ const state = {
 
     return "computer";
   },
+
+	updateScore(winner){
+    const currentState = this.getState();
+
+    if (winner === "player") {
+      currentState.playHistory.player++;
+    }
+
+    if (winner === "computer"){
+      currentState.playHistory.computer++;
+    }
+
+    currentState.currentGame.result = winner;
+    this.setState(currentState);
+  },
+
 };

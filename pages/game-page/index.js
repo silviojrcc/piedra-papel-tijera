@@ -1,8 +1,8 @@
 function initGamePage(params) {
-    const div = document.createElement("div");
-    const bgImg = "../../img/fondo.png";
-  
-    div.innerHTML = `
+  const div = document.createElement("div");
+  const bgImg = "../../img/fondo.png";
+
+  div.innerHTML = `
       <section class="game__section">
           <div class="game__counter-container">
               <custom-counter class="counter"></custom-counter>
@@ -15,8 +15,8 @@ function initGamePage(params) {
       </section>
     `;
 
-    const style = document.createElement("style");
-    style.innerHTML = `
+  const style = document.createElement("style");
+  style.innerHTML = `
       .game__section{
         background-image:url(${bgImg});
         display:flex;
@@ -38,9 +38,25 @@ function initGamePage(params) {
         padding: 0 20px;
       }
     `;
-  
-    
-    div.appendChild(style);
-    return div;
-  }
-  
+
+  const plays = div.querySelectorAll(".play");
+  let counter = div.querySelector(".counter");
+  let bandera = false;
+
+  plays.forEach((play) => {
+    play.addEventListener("click", () => {
+      bandera = true;
+      state.setPlay(play.textContent);
+      params.goTo("/piedra-papel-tijera/result");
+    });
+  });
+
+  counter.addEventListener("change", () => {
+    if (bandera == false) {
+      params.goTo("/piedra-papel-tijera/instructions");
+    }
+  });
+
+  div.appendChild(style);
+  return div;
+}

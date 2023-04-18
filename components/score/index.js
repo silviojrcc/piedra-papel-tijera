@@ -13,8 +13,8 @@ function initGameScore() {
         div.innerHTML = `
         <div class="container">
           <h3 class="title">Score</h3>
-          <p class="text">Player: 5</p>
-          <p class="text">Maquina: 8</p>
+          <p class="text">Player: ${score.player}</p>
+          <p class="text">Maquina: ${score.computer}</p>
         </div>
         `;
   

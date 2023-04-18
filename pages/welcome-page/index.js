@@ -1,5 +1,6 @@
 function initWelcomePage() {
     const div = document.createElement("div");
+    const bgImg = "../../img/fondo.png";
     
     div.innerHTML = `
       <section class="welcome__section">
@@ -16,6 +17,50 @@ function initWelcomePage() {
         </div>
       </section>
     `;
+
+    const style = document.createElement("style");
+  style.innerHTML = `
+    .welcome__section {
+      background-image:url(${bgImg});
+      display:flex;
+      width:100%;
+      height:100vh;
+      flex-direction:column;
+      justify-content:space-between;
+      align-items:center;
+      padding-top:20px;
+      padding-left: 20px;
+      padding-right:20px;
+    }
+
+    .hands-container {
+      display:flex;
+      gap:40px;
+      flex-direction:row;
+      justify-content:space-evenly;
+      overflow:hidden;
+      padding: 0 20px;
+    }
+
+    .title-container {
+      margin-top:50px;
+    }
+
+    .title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 80px;
+      color: #009048;
+    }
+
+    .button-container {
+      text-align:center;
+      width:100%;
+      margin-top:50px;
+    }
+  `;
+
+  div.appendChild(style);
   
     return div;
   }

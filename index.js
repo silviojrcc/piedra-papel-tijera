@@ -3,4 +3,5 @@
     initCustomButton();
     initChoice();
     initGameScore();
+    initCounter();
 })();

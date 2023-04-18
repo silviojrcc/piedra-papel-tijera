@@ -11,6 +11,13 @@ const state = {
     },
   },
 
+	init() {
+    const localData = localStorage.getItem("saved-state");
+    if (localData) {
+      this.setState(JSON.parse(localData));
+    }
+  },
+
   getScore() {
     return this.data.playHistory;
   },
